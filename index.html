@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .navbar {
+            position: fixed;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 230px;
+            display: block;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        
+        .nav-item a:hover {
+            background-color: #575757;
+            color: #fff;
+        }
+        
+        .nav-scrolled {
+            background-color: #222;
+        }
+        
+        .content {
+            padding-top: 20px;
+        }
+        
+        section {
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+        .home{
+            background-color: aquamarine;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .about{
+            background-color: blueviolet;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+        .contact{
+            background-color: brown;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+      
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#home">Home</a></li>
+            <li class="nav-item"><a href="#about">About</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section id="home" class="home">
+            <h1>Home</h1>
+            <p>This is the home section</p>
+        </section>
+        <section id="about" class="about">
+            <h1>About</h1>
+            <p>This is the about section</p>
+        </section>
+        <section id="contact" class="contact">
+            <h1>Contact</h1>
+            <p>This is the contact section</p>
+        
+        </section>
+         
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.navbar');
+        
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 0) {
+                    navbar.classList.add('nav-scrolled');
+                } else {
+                    navbar.classList.remove('nav-scrolled');
+                }
+            });
+        });
+        
+    </script>
+</body>
+</html>
